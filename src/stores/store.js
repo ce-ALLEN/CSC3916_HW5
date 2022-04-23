@@ -20,4 +20,10 @@ const store = createStore(
     )
 );
 
+render (
+    <Provider store = {store}>
+        <App/>
+    </Provider>
+)
+
 export default store;
