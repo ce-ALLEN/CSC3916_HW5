@@ -82,8 +82,8 @@ class MovieDetail extends Component {
                             </p>
                         )}
                         <Form>
-                            <Form.Group> controlId='review'>
-                                <Form.Label>Review</Form.Label>
+                            <Form.Group controlId='review'>
+                                {/*<Form.Label>Review</Form.Label>*/}
                                 <Form.Control as='textarea' onChange={this.updateDetails} value={this.state.details.review} placeholder="Enter review" />
                             </Form.Group>
                             <Form.Group>
