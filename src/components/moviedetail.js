@@ -88,7 +88,7 @@ class MovieDetail extends Component {
                             </Form.Group>
                             <Form.Group>
                                 <div key={'inline-radio'}>
-                                    <Form.Label>Rating &nbps;
+                                    <Form.Label Rating>
                                         <Form.Check onChange={this.updateRating} inline label='1' name='rating' type='radio' value={1} />
                                         <Form.Check onChange={this.updateRating} inline label='2' name='rating' type='radio' value={2} />
                                         <Form.Check onChange={this.updateRating} inline label='3' name='rating' type='radio' value={3} />
