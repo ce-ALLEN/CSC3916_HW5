@@ -29,10 +29,10 @@ export function setMovie(movie) {
     }
 }
 
-export function fetchMovie(movieId) {
+export function fetchMovie(title) {
     const env = runtimeEnv();
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/movies/${movieId}?reviews=true`, {
+        return fetch(`${env.REACT_APP_API_URL}/movies/${title}?reviews=true`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -70,5 +70,33 @@ export function fetchMovies() {
         }).then((res) => {
             dispatch(moviesFetched(res));
         }).catch((e) => console.log(e));
+    }
+}
+
+export function submitReview(info) {
+    let env = runtimeEnv()
+    console.log("info", info)
+    return dispatch => {
+        return fetch(`${env.REACT_APP_API_URL}/reviews`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            },
+            body: JSON.stringify(info),
+            mode: 'cors'
+        }).then((response) => {
+            if (!response.ok) {
+                throw Error(response.statusText)
+            }
+            return response.json()
+        }).then((res) => {
+            localStorage.setItem('title', info.title)
+            localStorage.setItem('reviewerName', info.reviewerName)
+            localStorage.setItem('review', info.review)
+            localStorage.setItem('rating', info.rating)
+        }).catch((e) => console.log(e)
+        ).then(dispatch(fetchMovie(info.title)))
     }
 }
