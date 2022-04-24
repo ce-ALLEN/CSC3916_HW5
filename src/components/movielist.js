@@ -37,13 +37,13 @@ class MovieList extends Component {
             return (
                 <Carousel onSelect={this.handleSelect}>
                     {movieList.map((movie) =>
-                        <Carousel.Item key={movie._id}>
+                        <Carousel.Item key={movie.title}>
                             <div>
-                                <LinkContainer to={'/movie/'+movie._id} onClick={()=>this.handleClick(movie)}>
-                                    <Nav.Link><Image className="image" src={movie.imgUrl} thumbnail /></Nav.Link>
+                                <LinkContainer to={'/movie/'+movie.title} onClick={()=>this.handleClick(movie)}>
+                                    <Nav.Link><Image className="image" src={movie.imgURL} height={500} width={300} thumbnail /></Nav.Link>
                                 </LinkContainer>
                             </div>
-                            <Carousel.Caption>
+                            <Carousel.Caption style={{color: 'white'}}>
                                 <h3>{movie.title}</h3>
                                 <BsStarFill glyph={'star'} /> {movie.averageRating} &nbsp;&nbsp; {movie.releaseDate}
                             </Carousel.Caption>
