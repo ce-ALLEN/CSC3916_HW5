@@ -98,7 +98,7 @@ class MovieDetail extends Component {
                                 </div>
                             </Form.Group>
                             <Form.Group>
-                                <Button type='submit' onClick={this.submitReview}>
+                                <Button type='submit' onClick={this.submit}>
                                     Submit Review
                                 </Button>
                             </Form.Group>

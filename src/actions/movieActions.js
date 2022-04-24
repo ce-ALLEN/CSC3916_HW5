@@ -92,6 +92,7 @@ export function submitReview(info) {
             }
             return response.json()
         }).then((res) => {
+            console.log("info", info)
             localStorage.setItem('title', info.title)
             localStorage.setItem('reviewerName', info.username)
             localStorage.setItem('review', info.review)
