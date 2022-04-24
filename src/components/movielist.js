@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {Image, Nav} from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
 import { BsStarFill} from 'react-icons/bs'
+import { Glyphicon } from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap';
 
 class MovieList extends Component {
@@ -43,9 +44,9 @@ class MovieList extends Component {
                                     <Nav.Link><Image className="image" src={movie.imgURL} height={500} width={300} thumbnail /></Nav.Link>
                                 </LinkContainer>
                             </div>
-                            <Carousel.Caption style={{color: 'white'}}>
+                            <Carousel.Caption style={{color: 'blue'}}>
                                 <h3>{movie.title}</h3>
-                                <BsStarFill glyph={'star'} /> {movie.averageRating} &nbsp;&nbsp; {movie.releaseDate}
+                                <BsStarFill glyph={'star'} /> {movie.averageRating} &nbsp;&nbsp; {movie.yearReleased}
                             </Carousel.Caption>
                         </Carousel.Item>
                     )}

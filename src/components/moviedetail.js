@@ -75,9 +75,9 @@ class MovieDetail extends Component {
                         <ListGroupItem><h4><BsStarFill/> {this.props.selectedMovie.averageRating}</h4></ListGroupItem>
                     </ListGroup>
                     <Card.Body>
-                        {this.props.selectedMovie.reviews.map((review, i) =>
+                        {this.props.selectedMovie.movieReview.map((review, i) =>
                             <p key={i}>
-                                <b>{review.username}</b>&nbsp; {review.review}
+                                <b>{review.reviewerName}</b>&nbsp; {review.review}
                                 &nbsp;  <BsStarFill /> {review.rating}
                             </p>
                         )}
@@ -90,10 +90,10 @@ class MovieDetail extends Component {
                                 <div key={'inline-radio'}>
                                     <Form.Label>Rating &nbps;
                                         <Form.Check onChange={this.updateRating} inline label='1' name='rating' type='radio' value={1} />
-                                        <Form.Check onChange={this.updateRating} inline label='1' name='rating' type='radio' value={2} />
-                                        <Form.Check onChange={this.updateRating} inline label='1' name='rating' type='radio' value={3} />
-                                        <Form.Check onChange={this.updateRating} inline label='1' name='rating' type='radio' value={4} />
-                                        <Form.Check onChange={this.updateRating} inline label='1' name='rating' type='radio' value={5} />
+                                        <Form.Check onChange={this.updateRating} inline label='2' name='rating' type='radio' value={2} />
+                                        <Form.Check onChange={this.updateRating} inline label='3' name='rating' type='radio' value={3} />
+                                        <Form.Check onChange={this.updateRating} inline label='4' name='rating' type='radio' value={4} />
+                                        <Form.Check onChange={this.updateRating} inline label='5' name='rating' type='radio' value={5} />
                                     Stars </Form.Label>
                                 </div>
                             </Form.Group>
