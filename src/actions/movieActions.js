@@ -93,7 +93,7 @@ export function submitReview(info) {
             return response.json()
         }).then((res) => {
             localStorage.setItem('title', info.title)
-            localStorage.setItem('reviewerName', info.reviewerName)
+            localStorage.setItem('reviewerName', info.username)
             localStorage.setItem('review', info.review)
             localStorage.setItem('rating', info.rating)
         }).catch((e) => console.log(e)

@@ -44,9 +44,16 @@ class MovieList extends Component {
                                     <Nav.Link><Image className="image" src={movie.imgURL} height={500} width={300} thumbnail /></Nav.Link>
                                 </LinkContainer>
                             </div>
-                            <Carousel.Caption style={{color: 'blue'}}>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <Carousel.Caption style={{color: 'white'}}>
                                 <h3>{movie.title}</h3>
-                                <BsStarFill glyph={'star'} /> {movie.averageRating} &nbsp;&nbsp; {movie.yearReleased}
+                                <BsStarFill glyph={'star'} /> {movie.averageRating} <br/> {movie.yearReleased}
                             </Carousel.Caption>
                         </Carousel.Item>
                     )}
