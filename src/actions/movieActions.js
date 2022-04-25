@@ -68,6 +68,7 @@ export function fetchMovies() {
             }
             return response.json()
         }).then((res) => {
+            console.log("testing\n")
             dispatch(moviesFetched(res));
         }).catch((e) => console.log(e));
     }
@@ -75,6 +76,7 @@ export function fetchMovies() {
 
 export function submitReview(info) {
     let env = runtimeEnv()
+    // JSON.stringify(info)
     console.log("info", info)
     return dispatch => {
         return fetch(`${env.REACT_APP_API_URL}/reviews`, {
@@ -90,11 +92,11 @@ export function submitReview(info) {
             if (!response.ok) {
                 throw Error(response.statusText)
             }
-            return response.json()
+            // return response.json()
         }).then((res) => {
             console.log("info", info)
             localStorage.setItem('title', info.title)
-            localStorage.setItem('reviewerName', info.username)
+            localStorage.setItem('reviewerName', info.reviewerName)
             localStorage.setItem('review', info.review)
             localStorage.setItem('rating', info.rating)
         }).catch((e) => console.log(e)
