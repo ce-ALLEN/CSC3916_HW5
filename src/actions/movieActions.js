@@ -92,6 +92,9 @@ export function submitReview(info) {
             if (!response.ok) {
                 throw Error(response.statusText)
             }
+            else {
+                console.log(response);
+            }
             // return response.json()
         }).then((res) => {
             console.log("info", info)
