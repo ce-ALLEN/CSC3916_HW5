@@ -93,6 +93,13 @@ export function submitReview(info) {
                 throw Error(response.statusText)
             }
             // return response.json()
-        }).then(dispatch(fetchMovie(info.title)))
+        }).then((res) => {
+            console.log("info", info)
+            localStorage.setItem('title', info.title)
+            localStorage.setItem('reviewerName', info.reviewerName)
+            localStorage.setItem('review', info.review)
+            localStorage.setItem('rating', info.rating)
+        }).catch((e) => console.log(e)
+        ).then(dispatch(fetchMovie(info.title)))
     }
 }
